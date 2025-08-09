@@ -1,0 +1,70 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    /* Cybersecurity Dark Theme */
+    --background: 220 25% 6%;
+    --foreground: 220 15% 95%;
+
+    --card: 220 20% 8%;
+    --card-foreground: 220 15% 95%;
+
+    --popover: 220 20% 8%;
+    --popover-foreground: 220 15% 95%;
+
+    --primary: 190 100% 60%;
+    --primary-foreground: 220 25% 6%;
+
+    --secondary: 220 15% 12%;
+    --secondary-foreground: 220 15% 85%;
+
+    --muted: 220 15% 10%;
+    --muted-foreground: 220 10% 65%;
+
+    --accent: 190 85% 45%;
+    --accent-foreground: 220 25% 6%;
+
+    --destructive: 0 75% 60%;
+    --destructive-foreground: 220 15% 95%;
+
+    --border: 220 15% 15%;
+    --input: 220 15% 12%;
+    --ring: 190 100% 60%;
+
+    --radius: 0.75rem;
+
+    /* Cybersecurity specific colors */
+    --cyber-green: 120 100% 50%;
+    --cyber-orange: 30 100% 60%;
+    --cyber-blue: 210 100% 65%;
+    --cyber-purple: 270 75% 65%;
+    
+    /* Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--accent)));
+    --gradient-cyber: linear-gradient(135deg, hsl(190 100% 40%), hsl(270 75% 50%));
+    --gradient-dark: linear-gradient(180deg, hsl(var(--background)), hsl(220 20% 8%));
+    
+    /* Shadows */
+    --shadow-cyber: 0 0 20px hsl(var(--primary) / 0.3);
+    --shadow-glow: 0 0 40px hsl(var(--accent) / 0.2);
+    
+    /* Animations */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+}
