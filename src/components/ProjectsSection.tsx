@@ -3,41 +3,41 @@ import { ExternalLink, Github, Lock, Globe, Database, Shield, Book, Send } from 
 
 const ProjectsSection = () => {
   const projects = [
-      {
-    title: "Maktab.uz - Masofaviy ta'lim platformasi",
-    description: "O'quv dasturlari, video darslar va interaktiv ta'lim materiallari bilan ta'minlangan masofaviy o'qitish platformasi, o'quvchilar, ota-onalar va o'qituvchilar uchun qulay foydalanish imkoniyati.",
-    technologies: ["HTML", "JavaScript", "PHP(Laravel)", "Responsive Design"],
-    icon: <Globe className="h-6 w-6" />,
-    color: "cyber-blue",
-    github: "https://github.com/UzEnRu", 
-    demo: "https://maktab.uz"
+    {
+      title: "Maktab.uz - Masofaviy ta'lim platformasi",
+      description: "O'quv dasturlari, video darslar va interaktiv ta'lim materiallari bilan ta'minlangan masofaviy o'qitish platformasi, o'quvchilar, ota-onalar va o'qituvchilar uchun qulay foydalanish imkoniyati.",
+      technologies: ["HTML", "JavaScript", "PHP(Laravel)", "Responsive Design"],
+      icon: <Globe className="h-6 w-6" />,
+      color: "cyber-blue",
+      github: "https://github.com/UzEnRu", 
+      demo: "https://maktab.uz"
     },
     {
-  title: "IDU University Bot",
-  description: "Imtihon natijalarini ko‘rish, universitet hayoti va yangiliklardan xabardor bo‘lish uchun mo‘ljallangan Telegram boti.",
-  technologies: ["Python", "Telegram Bot API", "Aiogram", "SQLite"],
-  icon: <Send className="h-6 w-6" />,
-  color: "cyber-blue",
-  github: "https://github.com/UzEnRu", 
-  demo: "https://t.me/iduz_bot"
-},
-{
-  title: "InternetBorUz Bot",
-  description: "O'z hududingizdagi Wi-Fi provayderlari haqida tezkor ma'lumot beruvchi Telegram boti.",
-  technologies: ["Python", "Telegram Bot API", "Requests", "BeautifulSoup"],
-  icon: <Send className="h-6 w-6" />,
-  color: "cyber-blue",
-  github: "https://github.com/UzEnRu", 
-  demo: "https://t.me/wifi_internet_bor_bot"
-},
-   {
-    title: "Kitobxon.com – Elektron kutubxona va onlayn kitob magazini",
-    description: "Elektron va audio kitoblarni o‘qish, yuklab olish yoki buyurtma berish imkonini beruvchi, turli janr va formatdagi asarlarni taklif etuvchi onlayn kutubxona va savdo platformasi.",
-    technologies: ["Web Reader", "PDF/FB2/MP3 Formats", "E-Commerce", "Responsive UI"],
-    icon: <Book className="h-6 w-6" />,
-    color: "cyber-green",
-    github: "https://github.com/UzEnRu", 
-    demo: "https://kitobxon.com"
+      title: "IDU University Bot",
+      description: "Imtihon natijalarini ko‘rish, universitet hayoti va yangiliklardan xabardor bo‘lish uchun mo‘ljallangan Telegram boti.",
+      technologies: ["Python", "Telegram Bot API", "Aiogram", "SQLite"],
+      icon: <Send className="h-6 w-6" />,
+      color: "cyber-blue",
+      github: "https://github.com/UzEnRu", 
+      demo: "https://t.me/iduz_bot"
+    },
+    {
+      title: "InternetBorUz Bot",
+      description: "O'z hududingizdagi Wi-Fi provayderlari haqida tezkor ma'lumot beruvchi Telegram boti.",
+      technologies: ["Python", "Telegram Bot API", "Requests", "BeautifulSoup"],
+      icon: <Send className="h-6 w-6" />,
+      color: "cyber-blue",
+      github: "https://github.com/UzEnRu", 
+      demo: "https://t.me/wifi_internet_bor_bot"
+    },
+    {
+      title: "Kitobxon.com – Elektron kutubxona va onlayn kitob magazini",
+      description: "Elektron va audio kitoblarni o‘qish, yuklab olish yoki buyurtma berish imkonini beruvchi, turli janr va formatdagi asarlarni taklif etuvchi onlayn kutubxona va savdo platformasi.",
+      technologies: ["Web Reader", "PDF/FB2/MP3 Formats", "E-Commerce", "Responsive UI"],
+      icon: <Book className="h-6 w-6" />,
+      color: "cyber-green",
+      github: "https://github.com/UzEnRu", 
+      demo: "https://kitobxon.com"
     },
     {
       title: "Xavfsiz API Gateway",
@@ -102,20 +102,28 @@ const ProjectsSection = () => {
                   {project.icon}
                 </div>
                 <div className="flex gap-2">
-                  <Button
-                    variant="ghost"
-                    size="sm"
-                    className="h-8 w-8 p-0 hover:bg-secondary"
-                  >
-                    <Github className="h-4 w-4" />
-                  </Button>
-                  <Button
-                    variant="ghost"
-                    size="sm"
-                    className="h-8 w-8 p-0 hover:bg-secondary"
-                  >
-                    <ExternalLink className="h-4 w-4" />
-                  </Button>
+                  {project.github && project.github !== "#" && (
+                    <a href={project.github} target="_blank" rel="noopener noreferrer">
+                      <Button
+                        variant="ghost"
+                        size="sm"
+                        className="h-8 w-8 p-0 hover:bg-secondary"
+                      >
+                        <Github className="h-4 w-4" />
+                      </Button>
+                    </a>
+                  )}
+                  {project.demo && project.demo !== "#" && (
+                    <a href={project.demo} target="_blank" rel="noopener noreferrer">
+                      <Button
+                        variant="ghost"
+                        size="sm"
+                        className="h-8 w-8 p-0 hover:bg-secondary"
+                      >
+                        <ExternalLink className="h-4 w-4" />
+                      </Button>
+                    </a>
+                  )}
                 </div>
               </div>
               
@@ -142,15 +150,16 @@ const ProjectsSection = () => {
         </div>
         
         <div className="text-center mt-12">
-           <a href="https://github.com/UzEnRu" target="_blank" rel="noopener noreferrer">
-          <Button 
-            variant="outline"
-            size="lg"
-            className="border-primary text-primary hover:bg-primary hover:text-primary-foreground transition-all duration-300"
-          >
-            <Github className="mr-2 h-5 w-5" />
-            GitHub'da ko'proq ko'rish
-          </Button></a>
+          <a href="https://github.com/UzEnRu" target="_blank" rel="noopener noreferrer">
+            <Button 
+              variant="outline"
+              size="lg"
+              className="border-primary text-primary hover:bg-primary hover:text-primary-foreground transition-all duration-300"
+            >
+              <Github className="mr-2 h-5 w-5" />
+              GitHub'da ko'proq ko'rish
+            </Button>
+          </a>
         </div>
       </div>
     </section>
