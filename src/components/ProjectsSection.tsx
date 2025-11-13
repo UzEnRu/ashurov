@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { ExternalLink, Github, Lock, Globe, Database, Shield, Book, Send } from "lucide-react";
+import { ExternalLink, Github, Lock, Globe, Database, Shield, Book, Send, DatabaseIcon } from "lucide-react";
 
 const ProjectsSection = () => {
   const projects = [
@@ -12,6 +12,15 @@ const ProjectsSection = () => {
       github: "https://github.com/UzEnRu", 
       demo: "https://maktab.uz"
     },
+    {
+  title: "KSHR Group – Consulting & Innovation Centre",
+  description: "Toshkent shahrida joylashgan konsultatsiya va innovatsiya markazi: korxona rivoji, sotsiologik tadqiqotlar va trening dasturlari bo‘yicha xizmatlar.",
+  technologies: ["Database Architecture", "API Development", "Cloud Infrastructure", "System Design"],
+  icon: <DatabaseIcon className="h-6 w-6" />,
+  color: "cyber-blue",
+  github: "https://github.com/UzEnRu",
+  demo: "https://kshrglobal.com"
+},
     {
       title: "IDU University Bot",
       description: "Imtihon natijalarini ko‘rish, universitet hayoti va yangiliklardan xabardor bo‘lish uchun mo‘ljallangan Telegram boti.",
